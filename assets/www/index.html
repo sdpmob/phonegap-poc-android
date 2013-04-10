@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Notification Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        // Empty
+    }
+
+    // Show a custom alert
+    //
+    function showAlert() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    }
+
+    // Beep three times
+    function playBeep() {
+        navigator.notification.beep(3);
+    }
+
+    // Vibrate for 2 seconds
+    function vibrate() {
+        navigator.notification.vibrate(2000);
+    }
+
+    // back Page
+    function back() {
+      var ref=window.open("index.html","_self");
+    }
+
+    function ir(i) {
+      var l="";
+      switch(i){
+        case 1:l="compass.html";break;
+        case 2:l="camera.html";break;
+        case 3:l="jqm.html";break;
+        case 6:l="sencha/index.html";break;
+        case 5:l="raul.html";break;
+        case 7:l="pushn.html";break;
+      }
+      var ref=window.open(l,"_self");
+    }
+
+    </script>
+  </head>
+  <body>
+    <p><a href="#" onclick="ir(5); return false;" style="color:green;">raul's</a></p>
+    <p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
+    <p><a href="#" onclick="playBeep(); return false;">Play Beep</a></p>
+    <p><a href="#" onclick="vibrate(); return false;">Vibrate</a></p>
+    <p><a href="#" onclick="back(); return false;" style="color:red;">Regresar</a></p>
+    <p><a href="#" onclick="ir(1); return false;" style="color:green;">Compass</a></p>
+    <p><a href="#" onclick="ir(2); return false;" style="color:green;">Camara</a></p>
+    <p><a href="#" onclick="ir(3); return false;" style="color:green;">JQueryMobile</a></p>
+    <p><a href="#" onclick="ir(6); return false;" style="color:green;">Sencha</a></p>
+    <p><a href="pushn.html" style="color:green;">Push Notification</a></p>
+    <p><a href="test_jspost.html" style="color:green;">test_js_post</a></p>
+  </body>
+</html>
